@@ -1,32 +1,61 @@
 function counter(id, target) {
-let count = 0;
+    let count = 0;
 
-let interval = setInterval(() => {
+    let interval = setInterval(() => {
+        count += Math.ceil(target / 100);
 
-count += Math.ceil(target / 100);
+        if (count >= target) {
+            count = target;
+            clearInterval(interval);
+        }
 
-if (count >= target) {
-count = target;
-clearInterval(interval);
+        const el = document.getElementById(id);
+        if (el) el.innerText = count + "+";
+
+    }, 20);
 }
 
-document.getElementById(id).innerText = count + "+";
+document.addEventListener("DOMContentLoaded", () => {
 
-}, 20);
-}
+    // ================= COUNTER =================
+    counter("cars", 500);
+    counter("customers", 12000);
+    counter("awards", 85);
 
-counter("cars", 500);
-counter("customers", 12000);
-counter("awards", 85);
+    // ================= LOADER =================
+    window.addEventListener("load", () => {
 
-window.addEventListener("load", () => {
+        setTimeout(() => {
 
-    setTimeout(() => {
+            const loader = document.getElementById("loader");
+            const main = document.getElementById("main-content");
 
-        document.getElementById("loader").style.display = "none";
+            if (loader) loader.style.display = "none";
+            if (main) main.style.display = "block";
 
-        document.getElementById("main-content").style.display = "block";
+        }, 3000);
+    });
 
-    }, 3000);
+    // ================= HAMBURGER =================
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("nav");
+    const links = document.querySelectorAll("nav a");
+
+    if (!menuToggle || !nav) {
+        console.log("❌ MENU ELEMENT NOT FOUND");
+        return;
+    }
+
+    menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        document.body.classList.toggle("menu-open");
+    });
+
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            nav.classList.remove("active");
+            document.body.classList.remove("menu-open");
+        });
+    });
 
 });
