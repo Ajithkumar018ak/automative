@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Velocity Motors</title>
+<title>Automotive Motors</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -12,6 +12,79 @@
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
+
+
+
+<!-- LOGIN MODAL -->
+
+<div class="auth-modal" id="loginModal">
+
+    <div class="auth-box">
+
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h1>Login</h1>
+
+        <form action="404.html">
+
+            <input type="email" placeholder="Email Address" required>
+
+            <input type="password" placeholder="Password" required>
+
+            <button type="submit" class="btn">
+                Login
+            </button>
+
+        </form>
+
+        <div class="auth-link">
+            Don't have an account?
+            <a href="#" onclick="switchToSignup()">
+                Sign Up
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- SIGNUP MODAL -->
+
+<div class="auth-modal" id="signupModal">
+
+    <div class="auth-box">
+
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h1>Create Account</h1>
+
+        <form action="404.html">
+
+            <input type="text" placeholder="Full Name" required>
+
+            <input type="email" placeholder="Email Address" required>
+
+            <input type="password" placeholder="Password" required>
+
+            <input type="password" placeholder="Confirm Password" required>
+
+            <button type="submit" class="btn">
+                Register
+            </button>
+
+        </form>
+
+        <div class="auth-link">
+            Already have an account?
+            <a href="#" onclick="switchToLogin()">
+                Login
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
 <body>
 
 <header>
@@ -29,10 +102,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="services.html">Services</a>
+        <a href="services.html">Service</a>
         <a href="contact.html">Contact</a>
         <a href="blog.html">Blog</a>
         <a href="car.html">Cars</a>
+        <a href="#" class="login-btn" onclick="openLogin()">Login</a>
+
+<a href="#" class="signup-btn" onclick="openSignup()">Sign Up</a>
     </nav>
 
     <a href="404.html" class="btn">Book Test Drive</a>
