@@ -59,3 +59,74 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+function openLogin(){
+
+    const modal = document.getElementById("loginModal");
+
+    if(modal){
+        modal.classList.add("active");
+    }
+}
+
+function openSignup(){
+
+    const modal = document.getElementById("signupModal");
+
+    if(modal){
+        modal.classList.add("active");
+    }
+}
+
+function closeModal(){
+
+    const loginModal =
+    document.getElementById("loginModal");
+
+    const signupModal =
+    document.getElementById("signupModal");
+
+    if(loginModal){
+        loginModal.classList.remove("active");
+    }
+
+    if(signupModal){
+        signupModal.classList.remove("active");
+    }
+}
+
+function switchToSignup(){
+
+    closeModal();
+
+    document.getElementById("signupModal")
+    .classList.add("active");
+}
+
+function switchToLogin(){
+
+    closeModal();
+
+    document.getElementById("loginModal")
+    .classList.add("active");
+}
+
+window.addEventListener("load", () => {
+
+    const loader = document.getElementById("loader");
+    const main = document.getElementById("main-content");
+
+    if(sessionStorage.getItem("loaderShown")){
+        if(loader) loader.style.display = "none";
+        if(main) main.style.display = "block";
+        return;
+    }
+
+    sessionStorage.setItem("loaderShown", "true");
+
+    setTimeout(() => {
+        if(loader) loader.style.display = "none";
+        if(main) main.style.display = "block";
+    }, 3000);
+
+});

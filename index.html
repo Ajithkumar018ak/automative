@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +12,97 @@
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
+
+<div id="loader">
+
+    <div class="loader-content">
+
+        <img src="./assests/logo1.webp" alt="Logo" class="loader-logo">
+
+        <div class="road">
+
+            <div class="car">
+                <img src="./assests/dashboard.png" alt="Car">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="main-content">
+
+<!-- LOGIN MODAL -->
+
+<div class="auth-modal" id="loginModal">
+
+    <div class="auth-box">
+
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h1>Login</h1>
+
+        <form action="404.html">
+
+            <input type="email" placeholder="Email Address" required>
+
+            <input type="password" placeholder="Password" required>
+
+            <button type="submit" class="btn">
+                Login
+            </button>
+
+        </form>
+
+        <div class="auth-link">
+            Don't have an account?
+            <a href="#" onclick="switchToSignup()">
+                Sign Up
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- SIGNUP MODAL -->
+
+<div class="auth-modal" id="signupModal">
+
+    <div class="auth-box">
+
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h1>Create Account</h1>
+
+        <form action="404.html">
+
+            <input type="text" placeholder="Full Name" required>
+
+            <input type="email" placeholder="Email Address" required>
+
+            <input type="password" placeholder="Password" required>
+
+            <input type="password" placeholder="Confirm Password" required>
+
+            <button type="submit" class="btn">
+                Register
+            </button>
+
+        </form>
+
+        <div class="auth-link">
+            Already have an account?
+            <a href="#" onclick="switchToLogin()">
+                Login
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
 <body>
 
 <header>
@@ -31,6 +122,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <a href="about.html">About</a>
         <a href="services.html">Service</a>
         <a href="contact.html">Contact</a>
+        <a href="blog.html">Blog</a>
+        <a href="car.html">Cars</a>
+        <a href="#" class="login-btn" onclick="openLogin()">Login</a>
+
+<a href="#" class="signup-btn" onclick="openSignup()">Sign Up</a>
     </nav>
 
     <a href="404.html" class="btn">Book Test Drive</a>
@@ -198,6 +294,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                         <a href="contact.html">Contact</a>
                     </li>
 
+                    <li>
+                        <a href="blog.html">Blog</a>
+                    </li>
+
+                    <li>
+                        <a href="car.html">Cars</a>
+                    </li>
+
                 </ul>
 
             </div>
@@ -247,7 +351,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         </div>
 
         <div class="footer-bottom">
-            © 2026 Velocity Motors.
+            © 2026 Automative Motors.
             All Rights Reserved.
         </div>
 
